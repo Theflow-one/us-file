@@ -4,61 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="R & K Auto Shop - Your trusted partner for auto repairs and maintenance.">
-<meta name="keywords" content="auto shop, car repair, maintenance, auto services">
+<meta name="keywords" content="auto shop, car repair, maintenance, auto services, Ralph Charmichael">
 <title>R & K Auto Shop</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
 body {
-font-family: 'Orbitron', sans-serif;
-background-color: #000; /* Body background set to black */
-color: #fff; /* Set text color to white for contrast */
+font-family: 'Roboto', sans-serif;
+background-color: #000;
+color: #fff;
 margin: 0;
 padding: 0;
-}
-.socials {
-text-align: center; /* Center align the social links */
-padding: 10px;
-background-color: #181818; /* Dark background for social links */
-}
-.socials a {
-color: #ff5722; /* Link color */
-margin: 0 10px; /* Spacing between links */
-text-decoration: none; /* Remove underline */
-}
-.socials a:hover {
-text-decoration: underline; /* Underline on hover */
+position: relative; /* Allow absolute positioning for the image */
 }
 header {
 display: flex;
-flex-direction: column; /* Stack items vertically */
-align-items: center; /* Center align items */
+flex-direction: column;
+align-items: center;
 padding: 20px;
-background-color: #181818; /* Dark header background */
+background-color: #181818;
 color: #fff;
-min-height: 200px; /* Ensure enough height for large text */
-}
-.welcome-section {
-text-align: center;
 }
 .welcome-text {
-font-size: 72px; /* Adjusted to a smaller size */
+font-size: 3em;
 color: #ff5722;
 margin-bottom: 10px;
-/* Animation removed */
+animation: blink 4s linear infinite;
+}
+@keyframes blink {
+50% { opacity: 0; }
 }
 .login-form {
-background-color: #fff; /* White background for the login form */
+background-color: #fff;
 padding: 20px;
 border-radius: 5px;
 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-width: 300px; /* Set a fixed width for better appearance */
+width: 300px;
+margin-bottom: 20px;
 }
 .login-form h2 {
-margin: 0 0 20px 0; /* Margin for spacing below the title */
-text-align: center; /* Center align the title */
-color: #333; /* Dark color for the title */
-font-size: 24px; /* Adjust font size as needed */
+margin: 0 0 20px 0;
+text-align: center;
+color: #333;
+font-size: 24px;
 }
 .login-form input {
 width: 100%;
@@ -79,87 +67,61 @@ cursor: pointer;
 .login-form button:hover {
 background-color: #e64a19;
 }
-.slogan {
-background-color: #181818; /* Dark background for the slogan section */
-color: #fff; /* White text color */
+.slogan, .operating-hours, .socials {
 text-align: center;
 padding: 20px;
-margin: 20px 0;
-border-radius: 5px;
+}
+.slogan h2 {
 font-size: 24px;
+margin: 10px 0;
 }
-.operating-hours {
-text-align: center; /* Center align the operating hours */
-padding: 10px;
-background-color: #181818; /* Dark background for operating hours */
-color: #fff; /* White text color */
+.operating-hours h4, .socials h4 {
+margin: 10px 0;
 }
-/* Brand Carousel Styles */
-.brand-carousel {
-display: flex;
-overflow: hidden; /* Hide overflow to create a carousel effect */
-width: 100%; /* Full width */
-justify-content: center; /* Center the brands */
-position: relative; /* Positioning for animation */
+.socials a {
+color: #ff5722; /* Change link color to orange */
+text-decoration: none; /* Remove underline */
+margin: 0 5px; /* Space between links */
 }
-.brand-carousel i {
-font-size: 50px; /* Adjust icon size as needed */
-margin: 0 10px; /* Space between brands */
-animation: slide 14s linear infinite; /* Animation */
+.socials a:hover {
+text-decoration: underline; /* Underline on hover */
 }
-@keyframes slide {
-0% { transform: translateX(0); }
-14.29% { transform: translateX(-100%); }
-28.57% { transform: translateX(-200%); }
-42.86% { transform: translateX(-300%); }
-57.14% { transform: translateX(-400%); }
-71.43% { transform: translateX(-500%); }
-85.71% { transform: translateX(-600%); }
-100% { transform: translateX(0); }
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-.welcome-text {
-font-size: 48px; /* Adjusted for smaller screens */
-}
-header {
-flex-direction: column;
-align-items: center;
-}
-}
-
-/* Image Styles */
 img {
-width: 100%; /* Make the image take the full width */
+width: 250px; /* Set a smaller size for the image */
 height: auto; /* Maintain aspect ratio */
-display: block; /* Remove any inline spacing */
-margin: 0; /* Remove any default margin */
+position: fixed; /* Fix it to the viewport */
+top: 0; /* Align to the top */
+left: 0; /* Align to the left */
+margin: 0; /* Remove any margins */
+padding: 0; /* Remove any padding */
+z-index: 10; /* Ensure it stays above other content */
 }
-
-/* Style for Created By Message */
 .created-by {
-text-align: center; /* Center align the text */
-color: #fff; /* White text color */
-margin-top: 10px; /* Space above */
-font-size: 16px; /* Adjust font size */
-font-style: italic; /* Italicize */
-font-weight: normal; /* Lighter font weight */
+text-align: center;
+color: #fff;
+margin: 10px 0;
+font-size: 16px;
+font-style: italic;
+font-weight: normal;
+}
+video {
+width: 100%; /* Make the video responsive */
+height: auto;
+display: block;
+margin: 0; /* Spacing around the video */
 }
 </style>
 </head>
 <body>
+<img src="auto-shop.jpeg" alt="A car being repaired at R & K Auto Shop">
 <header>
-<div class="welcome-section">
-<div class="welcome-text">Welcome to R & K Auto Shop</div>
-</div>
+<div class="welcome-text">R&K AUTO _WELCOME WE'RE HERE FOR YOU!</div>
 <div class="login-form">
-<h2>R & K Log In</h2> <!-- Title above the inputs -->
+<h2>R & K Log In</h2>
 <input type="text" placeholder="Username" required>
 <input type="password" placeholder="Password" required>
 <button type="submit">Sign In</button>
 </div>
-</header>
 <div class="slogan">
 <h2>Revving Up Reliability, One Part at a Time!</h2>
 </div>
@@ -169,25 +131,32 @@ font-weight: normal; /* Lighter font weight */
 <a href="https://www.instagram.com/rnkauto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> |
 <a href="https://www.facebook.com/profile.php?id=100067414568482" target="_blank">Tropical Tires Facebook</a> |
 <a href="https://www.instagram.com/tropicaltires" target="_blank">Tropical Tires Instagram</a>
-<br>
 <h4>Live Chat Assistant and Email Follow-Ups:</h4>
-<a href="mailto:rk.rkauto@gmail.com" style="color: #ff5722;">
-<i class="fas fa-envelope"></i> <!-- Email icon -->
+<a href="mailto:rk.rkauto@gmail.com" style="color: orange;">
+<i class="fas fa-envelope"></i>
 </a> |
-<a href="https://wa.me/16492420063" style="color: #ff5722;">
-<i class="fab fa-whatsapp"></i> <!-- WhatsApp icon -->
+<a href="https://wa.me/16492420063" style="color: orange;">
+<i class="fab fa-whatsapp"></i>
 </a>
 </div>
+
+<!-- Video Section -->
+<video autoplay  loop>
+<source src="r&k.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 <div class="operating-hours">
 <h4>Operating Hours:</h4>
 <p>9am to 5pm (Monday to Friday)<br>
 9am to 3pm (Saturday)<br>
 Closed on Sundays</p>
 </div>
-<img src="auto-shop.jpeg" alt="A car being repaired at R & K Auto Shop">
-<p class="created-by">Created by Stubbs Digital Algorithms.</p> <!-- Created By Message -->
+<p class="created-by">Created by Stubbs Digital Algorithms.</p>
+</header>
 </body>
 </html>
-       
-       
+
+
+
        
