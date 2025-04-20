@@ -24,40 +24,38 @@ padding: 0;
 position: relative;
 }
 
-/* Container for logo and welcome text - flexible layout */
-.logo-welcome-container {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 20px; /* space between logo and text */
-margin-bottom: 20px;
-padding: 20px;
-flex-wrap: wrap;
-}
-
-/* Make it stack vertically on small screens */
-@media (max-width: 480px) {
-.logo-welcome-container {
-flex-direction: column;
-}
-}
-
-/* Logo image styling */
+/* Fixed logo in top-left corner - smaller size for readability */
 .fixed-logo {
-width: 15vw; /* responsive size */
-max-width: 150px;
+position: fixed;
+top: 10px;
+left: 10px;
+z-index: 100;
+width: 100px; /* Smaller size for clarity */
+max-width: 100px; /* Keep it consistent */
 height: auto;
 border-radius: 50%; /* optional */
 box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+/* Make logo slightly larger on tablets and phones with media queries */
+@media (max-width: 768px) {
+.fixed-logo {
+width: 80px; /* Smaller on tablets if desired */
+}
+}
+@media (max-width: 480px) {
+.fixed-logo {
+width: 60px; /* Smaller on phones for clarity */
+}
+}
+
 /* Header styles */
 header {
-padding-top: 220px; /* enough padding to avoid overlap */
+padding-top: 120px; /* enough padding to avoid overlap */
 background-color: #181818;
-color: #fff;
 padding: 20px;
 text-align: center;
+color: #fff;
 }
 
 /* Welcome text styling */
@@ -66,7 +64,6 @@ font-size: 3em;
 color: #ff5722;
 margin-bottom: 10px;
 animation: blink 4s linear infinite;
-flex: 1; /* allow it to grow/shrink if needed */
 }
 
 /* Blink animation */
@@ -173,16 +170,12 @@ font-weight: normal;
 </head>
 <body>
 
-<!-- Larger fixed logo in top-left corner -->
+<!-- Smaller fixed logo in the top-left corner for readability -->
 <img src="auto-shop.jpeg" class="fixed-logo" alt="Car being repaired" />
 
 <!-- Main content -->
 <header>
-<!-- Container that stacks on small screens -->
-<div class="logo-welcome-container">
-<img src="auto-shop.jpeg" class="w3-circle" alt="Car being repaired" style="width:80px;"> <!-- smaller inline size for better control -->
 <div class="welcome-text">R&K AUTO _WELCOME WE'RE HERE FOR YOU!</div>
-</div>
 
 <!-- Login form -->
 <form class="login-form" action="/login" method="POST" aria-label="Login Form">
