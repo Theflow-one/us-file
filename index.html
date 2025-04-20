@@ -24,21 +24,34 @@ padding: 0;
 position: relative;
 }
 
-/* Fixed logo in top-left corner */
+/* Fixed logo in top-left corner - responsive size */
 .fixed-logo {
 position: fixed;
 top: 10px;
 left: 10px;
-z-index: 100; /* ensure it stays on top */
-width: 300px; /* fixed size, adjust as needed */
+z-index: 100;
+width: 15vw; /* Use viewport width for responsiveness */
+max-width: 150px; /* Limit maximum size on large screens */
 height: auto;
-border-radius: 70%; /* optional, for rounded image */
+border-radius: 50%; /* optional */
 box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Adjust logo size on smaller screens with media queries */
+@media (max-width: 768px) {
+.fixed-logo {
+width: 25vw; /* Slightly larger on tablets */
+}
+}
+@media (max-width: 480px) {
+.fixed-logo {
+width: 30vw; /* Larger on phones for better visibility */
+}
 }
 
 /* Header styles */
 header {
-padding-top: 120px; /* add top padding to avoid overlap with fixed logo */
+padding-top: 220px; /* enough padding to not overlap with logo */
 background-color: #181818;
 color: #fff;
 padding: 20px;
@@ -122,18 +135,18 @@ padding: 20px;
 margin: 10px 0;
 }
 .socials a {
-color: #ff5722; /* Change link color to orange */
-text-decoration: none; /* Remove underline */
-margin: 0 5px; /* Space between links */
+color: #ff5722;
+text-decoration: none;
+margin: 0 5px;
 font-size: 1.2em;
 }
 .socials a:hover {
-text-decoration: underline; /* Underline on hover */
+text-decoration: underline;
 }
 
 /* Video styles */
 video {
-width: 30%; /* Responsive width */
+width: 30%;
 height: auto;
 display: block;
 margin: 20px auto;
@@ -158,7 +171,7 @@ font-weight: normal;
 </head>
 <body>
 
-<!-- Fixed Logo in Corner -->
+<!-- Larger fixed logo in top-left corner, responsive -->
 <img src="auto-shop.jpeg" class="fixed-logo" alt="Car being repaired" />
 
 <!-- Main content -->
@@ -216,3 +229,4 @@ Closed on Sundays</p>
 
 </body>
 </html>
+
