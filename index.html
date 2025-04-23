@@ -1,230 +1,689 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="R & K Auto Shop - Your trusted partner for auto repairs and maintenance." />
-<meta name="keywords" content="auto shop, car repair, maintenance, auto services, Ralph Charmichael" />
+
 <title>R & K Auto Shop</title>
+
 <!-- Google Fonts -->
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
 <!-- Font Awesome -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-<!-- W3.CSS -->
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+
+
 
 <style>
-/* Body styling */
+
 body {
-font-family: 'Roboto', sans-serif;
-background-color: #000;
-color: #fff;
-margin: 0;
-padding: 0;
-position: relative;
+
+  font-family: 'Roboto', sans-serif;
+
+  background-color: #000;
+
+  color: #fff;
+
+  margin: 0;
+
+  padding: 0;
+
+  position: relative;
+
 }
 
-/* Fixed logo in top-left corner - smaller size for readability */
+
+
+/* Fixed logo in top-left corner, responsive size */
+
 .fixed-logo {
-position: fixed;
-top: 10px;
-left: 10px;
-z-index: 100;
-width: 100px; /* Smaller size for clarity */
-max-width: 100px; /* Keep it consistent */
-height: auto;
-border-radius: 50%; /* optional */
-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+  position: fixed;
+
+  top: 10px;
+
+  left: 10px;
+
+  z-index: 100;
+
+  width: 100px; /* default size */
+
+  max-width: 100px;
+
+  height: auto;
+
+  border-radius: 75%;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
 }
 
-/* Make logo slightly larger on tablets and phones with media queries */
 @media (max-width: 768px) {
-.fixed-logo {
-width: 80px; /* Smaller on tablets if desired */
-}
-}
-@media (max-width: 480px) {
-.fixed-logo {
-width: 60px; /* Smaller on phones for clarity */
-}
+
+  .fixed-logo {
+
+    width: 80px;
+
+  }
+
 }
 
-/* Header styles */
+@media (max-width: 480px) {
+
+  .fixed-logo {
+
+    width: 60px;
+
+  }
+
+}
+
+
+
+/* Header styling and padding to avoid overlap with fixed logo */
+
 header {
-padding-top: 120px; /* enough padding to avoid overlap */
-background-color: #181818;
-padding: 20px;
-text-align: center;
+
+  padding-top: 140px;
+
+  background-color: #181818;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: #fff;
+
+}
+
+/* Blink animation for welcome text */
+
+@keyframes blink {
+
+  0%, 50%, 100% { opacity: 1; }
+
+  25%, 75% { opacity: 0; }
+
+}
+
+.welcome-text {
+
+  font-size: 3em;
+
+  color: #ff5722;
+
+  margin-bottom: 10px;
+
+  display: inline-block;
+
+  animation: blink 5.5s infinite ! important;
+
+}
+
+/* Services toggle styles */
+
+.services-header {
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  font-size: 2em;
+
+  margin: 20px 0;
+
+  color: #ff5722;
+
+}
+
+.services-header i {
+
+  margin-right: 10px;
+
+  font-size: 1.2em;
+
+}
+
+.services-list {
+
+  display: none; /* Hidden by default */
+
+  background-color: #FF4D00;
+
+  padding: 20px;
+
+  border-radius: 8px;
+
+  max-width: 900px;
+
+  margin: 0 auto 20px auto;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+  font-size: 1.1em;
+  
+  border-style: double;
+
+}
+
+.services-list.show {
+
+  display: inline-flex;
+
+}
+
+.service-item {
+
+  margin: 10px 0;
+
+  padding-left: 20px;
+
+  position: relative;
+
+}
+
+.service-item:before {
+
+  content: "•";
+
+  color: #222;
+
+  font-size: 1.5em;
+
+  position: static;
+
+  left: 0;
+
+  top: 0;
+
+}
+
+.contact-menu {
+position: fixed;
+top: 50%;
+left: 0;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.7);
+padding: 10px;
+border-radius: 0 5px 5px 0;
+z-index: 999;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+/* Style for toggle button */
+.toggle-btn {
+margin-bottom: 10px;
+font-size: 1.2em;
 color: #fff;
 }
 
-/* Welcome text styling */
-.welcome-text {
-font-size: 3em;
-color: #ff5722;
-margin-bottom: 10px;
-animation: blink 4s linear infinite;
+/* Style for the list container */
+#myList {
+background-color: #222;
+border-radius: 5px;
+padding: 10px;
+width: 200px;
+display: none; /* initially hidden */
+list-style: none;
 }
 
-/* Blink animation */
-@keyframes blink {
-50% { opacity: 0; }
+/* List items styling */
+#myList li {
+margin: 10px 0;
 }
+
+#myList li a {
+color: #fff;
+text-decoration: none;
+}
+
+#myList li a:hover {
+background-color: #555;
+padding: 5px;
+display: block;
+}
+}
+
+/* About Us and other styles as before ... */
+
+
+
+.about-us {
+
+  background-color: #222;
+
+  padding: 20px;
+
+  margin: 20px auto;
+
+  max-width: 800px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+  font-size: 1.1em;
+
+  line-height: 1.6;
+
+}
+
+.about-us h2 {
+
+  text-align: center;
+
+  color: #ff5722;
+
+  margin-bottom: 15px;
+
+}
+
+.about-us p {
+
+  margin-bottom: 10px;
+
+}
+
+
 
 /* Login form styles */
+
 .login-form {
-background-color: #fff;
-padding: 20px;
-border-radius: 5px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-width: 90%;
-max-width: 300px;
-margin: 0 auto 20px auto;
+
+  background-color: #fff;
+
+  padding: 20px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  width: 90%;
+
+  max-width: 300px;
+
+  margin: 0 auto 20px auto;
+
 }
+
 .login-form h2 {
-margin: 0 0 20px 0;
-text-align: center;
-color: #333;
-font-size: 24px;
+
+  margin: 0 0 20px 0;
+
+  text-align: center;
+
+  color: #333;
+
+  font-size: 24px;
+
 }
+
 .login-form label {
-display: block;
-margin-top: 10px;
-font-weight: bold;
-font-size: 14px;
+
+  display: block;
+
+  margin-top: 10px;
+
+  font-weight: bold;
+
+  font-size: 14px;
+
 }
+
 .login-form input {
-width: 100%;
-padding: 10px;
-margin-top: 5px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-sizing: border-box;
+
+  width: 100%;
+
+  padding: 10px;
+
+  margin-top: 5px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  box-sizing: border-box;
+
 }
+
 .login-form button {
-width: 100%;
-padding: 10px;
-background-color: #ff5722;
-color: #fff;
-border: none;
-border-radius: 5px;
-margin-top: 15px;
-cursor: pointer;
-font-size: 16px;
+
+  width: 100%;
+
+  padding: 10px;
+
+  background-color: #ff5722;
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 5px;
+
+  margin-top: 15px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
 }
+
 .login-form button:hover {
-background-color: #e64a19;
+
+  background-color: #e64a19;
+
 }
 
-/* Slogan styles */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
 .slogan {
-text-align: center;
-padding: 20px;
+
+  text-align: center;
+
+  padding: 20px;
+
 }
+
 .slogan h2 {
-font-size: 24px;
-margin: 10px 0;
+
+  font-size: 24px;
+
+  margin: 10px 0;
+
 }
 
-/* Social media styles */
+
+
 .socials {
-text-align: center;
-padding: 20px;
-}
-.socials h4 {
-margin: 10px 0;
-}
-.socials a {
-color: #ff5722;
-text-decoration: none;
-margin: 0 5px;
-font-size: 1.2em;
-}
-.socials a:hover {
-text-decoration: underline;
+
+  text-align: center;
+
+  padding: 20px;
+
 }
 
-/* Video styles */
+.socials h4 {
+
+  margin: 10px 0;
+
+}
+
+.socials a {
+
+  color: #ff5722;
+
+  text-decoration: none;
+
+  margin: 0 5px;
+
+  font-size: 1.2em;
+
+}
+
+.socials a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+
 video {
-width: 30%;
-height: auto;
-display: block;
-margin: 20px auto;
+
+  max-width: 30%;
+
+  height: auto;
+
+  display: block;
+
+  margin: 20px auto;
+
 }
+
+
+
 .operating-hours {
-text-align: center;
-padding: 20px;
+
+  text-align: center;
+
+  padding: 20px;
+
 }
-.operating-hours h4 {
-margin: 10px 0;
+
+.operating-hours h3 {
+
+  margin: 10px 0;
+
 }
+
 .created-by {
-text-align: center;
-color: #fff;
-margin: 10px 0;
-font-size: 16px;
-font-style: italic;
-font-weight: normal;
+
+  text-align: center;
+
+  color: #fff;
+
+  margin: 10px 0;
+
+  font-size: 16px;
+
+  font-style: italic;
+
 }
+
+
+
+/* Responsive logo sizes */
+
+@media (max-width: 768px) {
+
+  .fixed-logo {
+
+    width: 80px;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .fixed-logo {
+
+    width: 60px;
+
+  }
+
+}
+
 </style>
+
 </head>
+
 <body>
 
-<!-- Smaller fixed logo in the top-left corner for readability -->
+<!-- Part 1 ends here, continue in Part 2... -->
+
+
+
 <img src="auto-shop.jpeg" class="fixed-logo" alt="Car being repaired" />
 
-<!-- Main content -->
+
+
+<!-- Main Content -->
+
 <header>
-<div class="welcome-text">R&K AUTO _WELCOME WE'RE HERE FOR YOU!</div>
 
-<!-- Login form -->
-<form class="login-form" action="/login" method="POST" aria-label="Login Form">
-<h2>R & K Log In</h2>
-<label for="username">Username</label>
-<input type="text" id="username" name="username" placeholder="Username" required />
-<label for="password">Password</label>
-<input type="password" id="password" name="password" placeholder="Password" required />
-<button type="submit">Sign In</button>
-</form>
+  <!-- Welcome message blinking -->
 
-<!-- Slogan -->
-<div class="slogan">
-<h2>Revving Up Reliability, One Part at a Time!</h2>
+  <div class="welcome-text">R&K AUTO _WELCOME WE'RE HERE FOR YOU!</div>
+
+
+
+  <!-- Services Section with toggle -->
+
+  <div style="text-align:center; cursor:pointer; margin:20px 0;">
+
+    <div class="services-header" id="toggleServices">
+
+      <i class="fas fa-cogs"></i> Services
+
+    </div>
+
+  </div>
+
+  <div class="services-list" id="servicesList">
+
+    <div class="service-item">Car Maintenance: Oil Change & Vehicle Inspection</div>
+
+    <div class="service-item">Vehicle Inspection with Machine Diagnostics</div>
+
+    <div class="service-item">On-Road Inspection & Assistance</div>
+
+    <div class="service-item">Engine Specialist</div>
+
+    <div class="service-item">Accurate Vehicle Information & Reporting</div>
+
+  </div>
+<div id="contactMenu" class="contact-menu">
+<div id="listToggle" class="toggle-btn" style="cursor:pointer;">
+<i class="fas fa-bars"></i> Contact & Information
 </div>
-
-<!-- Social media links -->
-<div class="socials">
-<h4>Follow us on Social Media:</h4>
-<a href="https://www.facebook.com/rnkauto/" target="_blank">Facebook</a> |
-<a href="https://www.instagram.com/rnkauto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> |
-<a href="https://www.facebook.com/profile.php?id=100067414568482" target="_blank">Tropical Tires Facebook</a> |
-<a href="https://www.instagram.com/tropicaltires" target="_blank">Tropical Tires Instagram</a>
-<h4>Live Chat Assistant and Email Follow-Ups:</h4>
-<a href="mailto:rk.rkauto@gmail.com" style="color: orange;">
-<i class="fas fa-envelope"></i>
-</a> |
-<a href="https://wa.me/16492420063" style="color: orange;">
-<i class="fab fa-whatsapp"></i>
+<ul id="myList" style="display:none;">
+<li><a href="file:///Users/albertcstubbs/Desktop/shop_draf_copy.html">Home</a></li>
+<li><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.epicflow.com/blog/5-latest-trends-in-the-automotive-industry/&ved=2ahUKEwj32-zz7eyMAxVQRTABHfexEJ0QFnoECDYQAQ&usg=AOvVaw1WM8BpS2ZoYJysG06TgJ1n">News</a></li>
+<li><a href="https://wa.me/16492420063" style="color: orange;">
+<i class="fab fa-whatsapp"></a></i></li>
 </a>
+<li><a href="mailto:rk.rkauto@gmail.com" style="color: orange;">
+<i class="fas fa-envelope"></i></a></li>
+</a>
+</ul>
 </div>
+  <!-- Our Story / About Us -->
 
-<!-- Video Section -->
-<video controls>
-<source src="r&k.mp4" type="video/mp4" />
-Your browser does not support the video tag.
+  <section class="about-us">
+
+    <h2>Our Story</h2>
+
+    <p>
+
+      Welcome to R&K Auto! Established in February 2018 by Ralph Carmichael, our lead mechanic, along with his dedicated partners—his wife and his brother—R&K Auto has become a trusted name in automotive care. With over 30 years of hands-on experience, Ralph turned a lifelong dream into reality, starting this family-owned business with a clear vision and commitment to excellence.
+
+    </p>
+
+    <p>
+
+      Ralph and his team are committed to providing reliable, high-quality auto services. Our motto, “Your Car, Our Business,” reflects our dedication to customer satisfaction and vehicle safety. We believe in honest, transparent service and building long-term relationships with our clients.
+
+    </p>
+
+    <p>
+
+      Whether it's routine maintenance, repairs, or diagnostics, we work hard to keep your vehicle running at its best. Thank you for trusting R&K Auto—we look forward to serving you!
+
+    </p>
+
+</section>
+
+<!-- Social Media Links -->
+
+  <div class="socials">
+
+    <h4>Follow us on Social Media:</h4>
+
+    <a href="https://www.facebook.com/rnkauto/" target="_blank">Facebook</a> |
+
+    <a href="https://www.instagram.com/rnkauto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> |
+
+    <a href="https://www.facebook.com/profile.php?id=100067414568482" target="_blank">Tropical Tires Facebook</a> |
+
+    <a href="https://www.instagram.com/tropicaltires" target="_blank">Tropical Tires Instagram</a>
+
+<video width="200" controls>
+
+  <source src="r&k.mp4" type="video/mp4" />
+
+  Your browser does not support the video tag.
+
 </video>
 
-<!-- Operating hours -->
+
+
+<!-- Operating Hours -->
+
 <div class="operating-hours">
-<h4>Operating Hours:</h4>
-<p>9am to 5pm (Monday to Friday)<br>
-9am to 3pm (Saturday)<br>
-Closed on Sundays</p>
+
+  <h3>Operating Hours:</h3>
+
+  <p>
+
+    9am to 5pm (Monday to Friday)<br>
+
+    9am to 3pm (Saturday)<br>
+
+    Closed on Sundays
+
+  </p>
+
 </div>
 
-<!-- Created by -->
+
+
+<!-- Footer / Created by -->
+
 <p class="created-by">Created by Stubbs Digital Algorithms.</p>
+
 </header>
 
+
+
+<!-- JavaScript to toggle services list -->
+
+<script>
+
+  document.getElementById('toggleServices').addEventListener('click', function() {
+
+    var services = document.getElementById('servicesList');
+
+    services.classList.toggle('show');
+
+  });
+  document.getElementById('listToggle').addEventListener('click', function(){const list= document.getElementById('myList'); if(list.style.display==='none' || list.style.display===''){list.style.display='block';}else {list.style.display ='none';}})
+
+</script>
+
 </body>
+
 </html>
+
+
+
+
+
