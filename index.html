@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>R & K Auto Shop</title>
+<title>R&K Auto Shop</title>
 
 <!-- Google Fonts -->
 
@@ -131,7 +131,7 @@ header {
 
   cursor: pointer;
 
-  display: inline-flex;
+  display: inline-block;
 
   align-items: center;
 
@@ -173,10 +173,7 @@ header {
   
   border-style: double;
   
-  box-sizing: border-box;
-
-  overflow-wrap: break-word;
-
+  flex-direction: column;
 }
 
 .services-list.show {
@@ -192,6 +189,8 @@ header {
   padding-left: 20px;
 
   position: relative;
+
+  word-break: break-word;
 
 }
 
