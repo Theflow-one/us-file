@@ -20,7 +20,7 @@
 
 
 <style>
-body {
+  body {
 font-family: 'Roboto', sans-serif;
 color: #fff;
 margin: 0;
@@ -31,7 +31,7 @@ background-image: url("R&K Business Card Design-B-JPG.jpg");
 background-repeat: repeat-y;
 background-position: left-top;
 background-attachment: fixed;
-background-size: auto; /* Change to 'cover' for full coverage if desired */
+background-size: auto; /* Change to 'cover' if you want full coverage */
 }
 
 /* Fixed logo styles (responsive) */
@@ -116,6 +116,7 @@ display: flex; /* or block if preferred */
 .service-item {
 margin: 10px 0;
 padding-left: 20px;
+word-wrap: break-word; /* prevent overflow of long words */
 }
 .service-item:before {
 content: "•";
@@ -148,7 +149,7 @@ border: 2px solid orange;
 border-radius: 8px;
 background: rgba(255, 255, 255, 0.1);
 max-width: 100%; /* prevent overflow on small screens */
-box-sizing: border-box;
+word-wrap: break-word; /* ensure long words wrap */
 }
 
 /* Contact menu styles (unchanged) */
@@ -228,7 +229,7 @@ font-size: 16px;
 font-style: italic;
 }
 
-/* Responsive styles for small screens */
+/* Responsive adjustments for small screens */
 @media(max-width: 768px) {
 .fixed-logo {
 width: 80px;
@@ -242,7 +243,7 @@ background-size: cover;
 padding: 10px;
 }
 .about-us p {
-font-size: 16px;
+font-size: 14px;
 padding: 8px;
 }
 /* Make toggle full width */
@@ -254,8 +255,7 @@ width: 100%;
 .service-item {
 padding-left: 10px;
 }
-}
-</style>
+}</style>
 
 </head>
 
