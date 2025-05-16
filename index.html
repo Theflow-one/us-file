@@ -20,9 +20,25 @@
 
 
 <style>
+  body {
+font-family: 'Roboto', sans-serif;
+color: #fff;
+margin: 0;
+padding: 0;
+position: relative;
+background-color: black;
+background-image: url("R&K Business Card Design-B-JPG.jpg");
+background-repeat: repeat-y; /* your current desktop setting */
+background-position: left-top;
+background-attachment: fixed;
+background-size: auto; /* desktop view, no change here */
+}
+
+/* Responsive fix for small screens to show entire image properly */
+@media(max-width: 480px) {
 body {
-background-size: contain; /* show full image */
-background-position: center; /* center the image */
+background-size: cover; /* fill the whole screen, cropping if necessary */
+background-position: center; /* center the image for best fit */
 background-repeat: no-repeat; /* prevent tiling */
 }
 }
@@ -228,9 +244,9 @@ width: 80px;
 }
 @media(max-width: 480px) {
 body {
-background-size: contain; /* show full image on small screens */
-background-position: center;
-background-repeat: no-repeat;
+background-size: cover; /* fill the screen, cropping if needed */
+background-position: center; /* center the image */
+background-repeat: no-repeat; /* prevent tiling */
 }
 .about-us {
 padding: 10px;
@@ -248,8 +264,7 @@ width: 100%;
 .service-item {
 padding: 8px 10px;
 }
-}
-</style>
+}</style>
 
 </head>
 
