@@ -87,7 +87,7 @@ display: inline-block;
 animation: blink 5.5s infinite;
 }
 
-/* Click Services Button */
+/* Stylish Click Services Button */
 .services-header {
 cursor: pointer;
 display: flex;
@@ -95,16 +95,18 @@ align-items: center;
 justify-content: center;
 font-size: 2em;
 margin: 20px 0;
-color: #ff5722;
-width: 100%; /* full width for mobile */
-padding: 10px;
-box-sizing: border-box;
-background: transparent;
-border: none;
+padding: 12px 25px;
+background: linear-gradient(135deg, #ff7e00, #ff5722); /* attractive gradient */
+color: #fff; /* white text for contrast */
+border-radius: 8px; /* rounded corners */
+box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* subtle shadow for depth */
+transition: background 0.3s, transform 0.2s;
+width: fit-content; /* fit to content */
+max-width: 100%;
 }
-.services-header i {
-margin-right: 10px;
-font-size: 1.2em;
+.services-header:hover {
+background: linear-gradient(135deg, #ff8e00, #ff6f00);
+transform: translateY(-2px);
 }
 
 /* Services list - hidden by default */
@@ -122,7 +124,7 @@ box-sizing: border-box;
 text-align: center;
 }
 .services-list.show {
-display: flex; /* or block if preferred */
+display: flex;
 flex-direction: column;
 }
 
@@ -236,7 +238,7 @@ font-size: 16px;
 font-style: italic;
 }
 
-/* Responsive adjustments for tiny screens */
+/* Responsive adjustments for small screens */
 @media(max-width: 768px) {
 .fixed-logo {
 width: 80px;
@@ -245,8 +247,8 @@ width: 80px;
 @media(max-width: 480px) {
 body {
 background-size: cover; /* fill the screen, cropping if needed */
-background-position: center; /* center the image */
-background-repeat: no-repeat; /* prevent tiling */
+background-position: center;
+background-repeat: no-repeat;
 }
 .about-us {
 padding: 10px;
