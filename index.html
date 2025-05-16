@@ -20,202 +20,141 @@
 
 
 <style>
-
 body {
-
-  font-family: 'Roboto', sans-serif;
-
-  color: #fff;
-
-  margin: 0;
-
-  padding: 0;
-
-  position: relative;
-  background-color: black;
-  background-image: url("R&K Business Card Design-B-JPG.jpg");
-  background-repeat: repeat-y;
-  background-position: left-top;
-  background-attachment: fixed;
-  background-size: auto;
-
+font-family: 'Roboto', sans-serif;
+color: #fff;
+margin: 0;
+padding: 0;
+position: relative;
+background-color: black;
+background-image: url("R&K Business Card Design-B-JPG.jpg");
+background-repeat: repeat-y;
+background-position: left-top;
+background-attachment: fixed;
+background-size: auto; /* Change to 'cover' for full coverage */
 }
 
-
-
-/* Fixed logo in top-left corner, responsive size */
-
+/* Fixed logo styles (responsive) */
 .fixed-logo {
-
-  position: fixed;
-
-  top: 10px;
-
-  left: 10px;
-
-  z-index: 100;
-
-  width: 100px; /* default size */
-
-  max-width: 100px;
-
-  height: auto;
-
-  border-radius: 75%;
-
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
+position: fixed;
+top: 10px;
+left: 10px;
+z-index: 100;
+width: 100px;
+max-width: 100px;
+height: auto;
+border-radius: 75%;
+box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+@media(max-width: 768px) {
+.fixed-logo {
+width: 80px;
+}
+}
+@media(max-width: 480px) {
+.fixed-logo {
+width: 60px;
+}
 }
 
-    width: 80px;
-
-  }
-
-}
-
-@media (max-width: 480px) {
-
-  .fixed-logo {
-
-    width: 60px;
-
-  }
-
-}
-
-
-
-/* Header styling and padding to avoid overlap with fixed logo */
-
+/* Header styles */
 header {
-
-  padding-top: 140px;
-  
-  padding: 20px;
-
-  text-align: center;
-
-  color: #fff;
-
+padding-top: 140px;
+padding: 20px;
+text-align: center;
+color: #fff;
 }
 
-/* Blink animation for welcome text */
-
+/* Blinking welcome text */
 @keyframes blink {
-
-  0%, 50%, 100% { opacity: 1; }
-
-  25%, 75% { opacity: 0; }
-
+0%, 50%, 100% { opacity: 1; }
+25%, 75% { opacity: 0; }
 }
-
 .welcome-text {
-
-  font-size: 3em;
-
-  color: #ff5722;
-
-  margin-bottom: 10px;
-
-  display: inline-block;
-
-  animation: blink 5.5s infinite ! important;
-
+font-size: 3em;
+color: #ff5722;
+margin-bottom: 10px;
+display: inline-block;
+animation: blink 5.5s infinite !important;
 }
 
-/* Services toggle styles */
-
+/* Services toggle button */
 .services-header {
-
-  cursor: pointer;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  font-size: 2em;
-
-  margin: 20px 0;
-
-  color: #ff5722;
-
+cursor: pointer;
+display: inline-flex;
+align-items: center;
+font-size: 2em;
+margin: 20px 0;
+color: #ff5722;
+width: 100%;
+justify-content: center;
 }
-
 .services-header i {
-
-  margin-right: 10px;
-
-  font-size: 1.2em;
-
+margin-right: 10px;
+font-size: 1.2em;
 }
 
+/* Services list styling */
 .services-list {
-
-  display: none; /* Hidden by default */
-
-  background-color: #FF4D00;
-
-  padding: 20px;
-
-  border-radius: 8px;
-
-  max-width: 900px;
- 
-  width: 100;
- 
-  margin: 0 auto 20px auto;
-
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-
-  font-size: 1.1em;
-  
-  border: 3px solid orange;;
-  
-  box-sizing: border-box;
-  
-  overflow-wrap: break-word;
-
+display: none;
+background-color: #FF4D00;
+padding: 20px;
+border-radius: 8px;
+max-width: 900px;
+width: 100%;
+margin: 0 auto 20px auto;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+font-size: 1.1em;
+border: 3px solid orange;
+box-sizing: border-box;
 }
-
 .services-list.show {
-
-  display: inline-flex;
-
+display: flex; /* or block */
 }
-
 .service-item {
-
-  margin: 10px 0;
-
-  padding-left: 20px;
-
-  position: relative;
-
+margin: 10px 0;
+padding-left: 20px;
 }
-
 .service-item:before {
-
-  content: "•";
-
-  color: #222;
-
-  font-size: 1.5em;
-
-  position: static;
-
-  left: 0;
-
-  top: 0;
-
+content: "•";
+color: #222;
+font-size: 1.5em;
+position: static;
+left: 0;
+top: 0;
 }
 
+/* Our Story section with same orange background */
+.about-us {
+background-color: #FF4D00;
+padding: 20px;
+max-width: 800px;
+margin: 0 auto;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.about-us h2 {
+text-align: center;
+color: #fff; /* optional, if you want white text on orange background */
+margin-bottom: 15px;
+}
+.about-us p {
+font-size: 18px;
+margin: 10px 20px;
+padding: 10px 20px;
+border: 2px solid orange;
+border-radius: 8px;
+background: rgba(255, 255, 255, 0.1);
+}
+
+/* Contact menu styles (unchanged) */
 .contact-menu {
 position: fixed;
 top: 50%;
 left: 0;
 transform: translateY(-50%) translateX(-8%);
 transition: transform 0.3s ease-in-out;
-background-color: rgba(0, 0, 0, 0.7);
+background-color: rgba(0,0,0,0.7);
 padding: 10px;
 border-radius: 0 5px 5px 0;
 z-index: 999;
@@ -223,306 +162,90 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 }
-
-/* Style for toggle button */
 .toggle-btn {
 margin-bottom: 10px;
 font-size: 1.2em;
 color: #fff;
+cursor: pointer;
 }
-
-/* Style for the list container */
 #myList {
 background-color: #222;
 border-radius: 5px;
 padding: 10px;
 width: 200px;
-display: none; /* initially hidden */
+display: none;
 list-style: none;
 }
-
-/* List items styling */
 #myList li {
 margin: 10px 0;
 }
-
 #myList li a {
 color: #fff;
 text-decoration: none;
 display: block;
 padding: 5px;
 }
-
 #myList li a:hover {
 background-color: #555;
-padding: 5px;
-display: block;
-}
 }
 
-/* About Us and other styles as before ... */
-
-
-
-.about-us {
-
-  padding: 20px;
-  
-  max-width: 800px;
-
-  border-radius: 8px;
-
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-
-  font-size: 1.1em;
-
-  line-height: 1.6;
-  
-  margin-bottom: 80px;
- 
- }
- 
-
-.about-us h2 {
-
-  text-align: center;
-
-  color: #ff5722;
-
-  margin-bottom: 15px;
-
-}
-
-.about-us p {
-   font-size: 18px;
-   margin: 10px 20px;
-   padding: 10px 20px;
-   color: #ff5722;
-   
-   
-   
-}
-
-
-/* Login form styles */
-
-.login-form {
-
-
-  padding: 20px;
-
-  border-radius: 5px;
-
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-
-  width: 90%;
-
-  max-width: 300px;
-
-  margin: 0 auto 20px auto;
-
-}
-
-.login-form h2 {
-
-  margin: 0 0 20px 0;
-
-  text-align: center;
-
-  color: #333;
-
-  font-size: 24px;
-
-}
-
-.login-form label {
-
-  display: block;
-
-  margin-top: 10px;
-
-  font-weight: bold;
-
-  font-size: 14px;
-
-}
-
-.login-form input {
-
-  width: 100%;
-
-  padding: 10px;
-
-  margin-top: 5px;
-
-  border: 1px solid #ccc;
-
-  border-radius: 5px;
-
-  box-sizing: border-box;
-
-}
-
-.login-form button {
-
-  width: 100%;
-
-  padding: 10px;
-
-  color: #fff;
-
-  border: none;
-
-  border-radius: 5px;
-
-  margin-top: 15px;
-
-  cursor: pointer;
-
-  font-size: 16px;
-
-}
-
-.login-form button:hover {
-
-
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color on hover */
-li a:hover {
-  color: white;
-}
-
-.slogan {
-
-  text-align: center;
-
-  padding: 20px;
-
-}
-
-.slogan h2 {
-
-  font-size: 24px;
-
-  margin: 10px 0;
-
-}
-
-
-
+/* Social media styles, operating hours, footer (unchanged) */
 .socials {
-
-  text-align: center;
-
-  padding: 20px;
-
+text-align: center;
+padding: 20px;
 }
-
 .socials h4 {
-
-  margin: 10px 0;
-
+margin: 10px 0;
 }
-
 .socials a {
-
-  color: #ff5722;
-
-  text-decoration: none;
-
-  margin: 0 5px;
-
-  font-size: 1.2em;
-
+color: #ff5722;
+text-decoration: none;
+margin: 0 5px;
+font-size: 1.2em;
 }
-
 .socials a:hover {
-
-  text-decoration: underline;
-
+text-decoration: underline;
 }
-
-
-
 video {
-
-  max-width: 30%;
-
-  height: auto;
-
-  display: block;
-
-  margin: 20px auto;
-
+max-width: 200px;
+height: auto;
+display: block;
+margin: 20px auto;
 }
-
-
-
 .operating-hours {
-
-  text-align: center;
-
-  padding: 20px;
-
+text-align: center;
+padding: 20px;
 }
-
-.operating-hours h3 {
-
-  margin: 10px 0;
-  
-}
-
 .created-by {
-
-  text-align: center;
-
-  color: #fff;
-
-  margin: 10px 0;
-
-  font-size: 16px;
-
-  font-style: italic;
-
+text-align: center;
+color: #fff;
+margin: 10px 0;
+font-size: 16px;
+font-style: italic;
 }
 
-
-
-/* Responsive logo sizes */
-
-@media (max-width: 768px) {
-
-  .fixed-logo {
-
-    width: 80px;
-
-  }
-
+/* Responsive styles for small screens */
+@media(max-width: 768px) {
+.fixed-logo {
+width: 80px;
 }
-
-@media (max-width: 480px) {
-
-  .fixed-logo {
-
-    width: 60px;
-
-  }
-
+}
+@media(max-width: 480px) {
+body {
+background-size: cover;
+}
+.about-us {
+padding: 10px;
+}
+.about-us p {
+font-size: 16px;
+padding: 8px 10px;
+}
+/* Make toggle full width */
+.services-header,
+.services-list {
+width: 100%;
+}
 }
 
 </style>
