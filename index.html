@@ -31,7 +31,7 @@ background-image: url("R&K Business Card Design-B-JPG.jpg");
 background-repeat: repeat-y;
 background-position: left-top;
 background-attachment: fixed;
-background-size: auto; /* Change to 'cover' for full coverage */
+background-size: auto; /* Change to 'cover' for full coverage if desired */
 }
 
 /* Fixed logo styles (responsive) */
@@ -101,7 +101,7 @@ background-color: #FF4D00;
 padding: 20px;
 border-radius: 8px;
 max-width: 900px;
-width: 100%;
+width: 100%; /* responsive width */
 margin: 0 auto 20px auto;
 box-shadow: 0 0 10px rgba(0,0,0,0.3);
 font-size: 1.1em;
@@ -109,8 +109,10 @@ border: 3px solid orange;
 box-sizing: border-box;
 }
 .services-list.show {
-display: flex; /* or block */
+display: flex; /* or block if preferred */
 }
+
+/* Individual service items styling */
 .service-item {
 margin: 10px 0;
 padding-left: 20px;
@@ -124,7 +126,7 @@ left: 0;
 top: 0;
 }
 
-/* Our Story section with same orange background */
+/* Our Story section with same orange background and responsiveness */
 .about-us {
 background-color: #FF4D00;
 padding: 20px;
@@ -135,16 +137,18 @@ box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 .about-us h2 {
 text-align: center;
-color: #fff; /* optional, if you want white text on orange background */
+color: #fff; /* optional for contrast */
 margin-bottom: 15px;
 }
 .about-us p {
 font-size: 18px;
 margin: 10px 20px;
-padding: 10px 20px;
+padding: 10px;
 border: 2px solid orange;
 border-radius: 8px;
 background: rgba(255, 255, 255, 0.1);
+max-width: 100%; /* prevent overflow on small screens */
+box-sizing: border-box;
 }
 
 /* Contact menu styles (unchanged) */
@@ -239,15 +243,18 @@ padding: 10px;
 }
 .about-us p {
 font-size: 16px;
-padding: 8px 10px;
+padding: 8px;
 }
 /* Make toggle full width */
 .services-header,
 .services-list {
 width: 100%;
 }
+/* Smaller padding for service items on small screens */
+.service-item {
+padding-left: 10px;
 }
-
+}
 </style>
 
 </head>
