@@ -25,13 +25,13 @@ font-family: 'Roboto', sans-serif;
 color: #fff;
 margin: 0;
 padding: 0;
-position: relative;
 background-color: black;
 background-image: url("R&K Business Card Design-B-JPG.jpg");
 background-repeat: repeat-y;
 background-position: left-top;
 background-attachment: fixed;
-background-size: auto; /* Change to 'cover' if you want full coverage */
+background-size: auto; /* or 'cover' for full image fit */
+overflow-x: hidden; /* prevent horizontal overflow */
 }
 
 /* Fixed logo styles (responsive) */
@@ -57,15 +57,13 @@ width: 60px;
 }
 }
 
-/* Header styles */
+/* Header & welcome */
 header {
 padding-top: 140px;
 padding: 20px;
 text-align: center;
 color: #fff;
 }
-
-/* Blinking welcome text */
 @keyframes blink {
 0%, 50%, 100% { opacity: 1; }
 25%, 75% { opacity: 0; }
@@ -75,59 +73,57 @@ font-size: 3em;
 color: #ff5722;
 margin-bottom: 10px;
 display: inline-block;
-animation: blink 5.5s infinite !important;
+animation: blink 5.5s infinite;
 }
 
-/* Services toggle button */
+/* Click Services Button */
 .services-header {
 cursor: pointer;
-display: inline-flex;
+display: flex;
 align-items: center;
+justify-content: center;
 font-size: 2em;
 margin: 20px 0;
 color: #ff5722;
-width: 100%;
-justify-content: center;
+width: 100%; /* full width for mobile */
+padding: 10px;
+box-sizing: border-box;
+background: transparent;
+border: none; /* no border to avoid overflow */
 }
 .services-header i {
 margin-right: 10px;
 font-size: 1.2em;
 }
 
-/* Services list styling */
+/* Services list - hidden by default */
 .services-list {
 display: none;
 background-color: #FF4D00;
 padding: 20px;
 border-radius: 8px;
 max-width: 900px;
-width: 100%; /* responsive width */
+width: 100%;
 margin: 0 auto 20px auto;
 box-shadow: 0 0 10px rgba(0,0,0,0.3);
 font-size: 1.1em;
-border: 3px solid orange;
 box-sizing: border-box;
+text-align: center; /* center text */
 }
 .services-list.show {
 display: flex; /* or block if preferred */
+flex-direction: column; /* stack items vertically */
 }
 
-/* Individual service items styling */
+/* Service items styling */
 .service-item {
 margin: 10px 0;
-padding-left: 20px;
-word-wrap: break-word; /* prevent overflow of long words */
-}
-.service-item:before {
-content: "•";
-color: #222;
-font-size: 1.5em;
-position: static;
-left: 0;
-top: 0;
+padding: 10px 20px; /* small, flexible padding */
+word-wrap: break-word; /* prevent long words overflowing */
+text-align: center; /* center text for better mobile look */
 }
 
-/* Our Story section with same orange background and responsiveness */
+/* About Us / Our Story styling with same orange background */
 .about-us {
 background-color: #FF4D00;
 padding: 20px;
@@ -138,18 +134,18 @@ box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 .about-us h2 {
 text-align: center;
-color: #fff; /* optional for contrast */
 margin-bottom: 15px;
 }
 .about-us p {
-font-size: 18px;
+font-size: 16px;
 margin: 10px 20px;
 padding: 10px;
-border: 2px solid orange;
+border: none; /* no border to prevent overflow */
 border-radius: 8px;
-background: rgba(255, 255, 255, 0.1);
-max-width: 100%; /* prevent overflow on small screens */
-word-wrap: break-word; /* ensure long words wrap */
+background: rgba(255,255,255,0.1);
+max-width: 100%;
+word-wrap: break-word;
+text-align: center;
 }
 
 /* Contact menu styles (unchanged) */
@@ -194,7 +190,7 @@ padding: 5px;
 background-color: #555;
 }
 
-/* Social media styles, operating hours, footer (unchanged) */
+/* Footer & social media, operating hours (unchanged) */
 .socials {
 text-align: center;
 padding: 20px;
@@ -229,7 +225,7 @@ font-size: 16px;
 font-style: italic;
 }
 
-/* Responsive adjustments for small screens */
+/* Responsive adjustments for tiny screens */
 @media(max-width: 768px) {
 .fixed-logo {
 width: 80px;
@@ -246,16 +242,17 @@ padding: 10px;
 font-size: 14px;
 padding: 8px;
 }
-/* Make toggle full width */
+/* Make toggle full width on small screens */
 .services-header,
 .services-list {
 width: 100%;
 }
-/* Smaller padding for service items on small screens */
+/* Smaller font size for service items if needed */
 .service-item {
-padding-left: 10px;
+padding: 8px 10px;
 }
-}</style>
+} 
+</style>
 
 </head>
 
